@@ -36,10 +36,10 @@ def get_birthday():
   return (next - today).days
 
 def get_guoqin():
-  CHinaBirthday = datetime.strptime(str(date.today().year) + "-" + guoqin, "%m-%d")
-  if CHinaBirthday < datetime.now():
-    CHinaBirthday = CHinaBirthday.replace(year=CHinaBirthday.year + 1)
-  return (CHinaBirthday - today).days
+  next = datetime.strptime(str(date.today().year) + "-" + guoqin, "%Y-%m-%d")
+  if next < datetime.now():
+    next = next.replace(year=next.year + 1)
+  return (next - today).days
 
 def get_words():
   words = requests.get("https://api.shadiao.pro/chp")
